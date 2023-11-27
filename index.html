@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contest Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+
+    <main>
+        <section id="home">
+            <h1>Welcome to the IEEE IARE Student Branch Logo Making Contest!</h1>
+            <p>Join the contest and showcase your talent!</p>
+            <div id="imageContainer">
+                <img src="Portrait.jpg" alt="Portrait" id="portraitImg">
+                <img src="Landscape.jpg" alt="Landscape" id="landscapeImg">
+            </div>
+            <p>Scan the QR Code or click on Register Now</p>
+            <img src="QR Code.jpg" alt="QR"><br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2kMFZEbqUgetk8J1DhJblfJoMtQu6NFIK2OZRuLmlCC0yag/viewform"
+                class="btn">Register Now</a>
+        </section>
+        <hr style="margin: 10px 20vw;">
+        <section id="about">
+            <h2>RULES FOR LOGO MAKING</h2>
+            <ol>
+                <li>You can use any software</li>
+                <li>Final output should be a combination of both IARE & IEEE</li>
+                <li>If you are making a sketch of the logo, make sure you upload a clear picture</li>
+                <li><strong>Best logo will be used as the IEEE logo of our COLLEGE</strong></li>
+            </ol>
+        </section>
+        <hr style="margin: 10px 20vw;">
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            9701060738 <br>
+            7416758684 <br>
+            7842743808
+            </p>
+            <i class="fa-regular fa-envelope"></i><span>ieeeiaresb@gmail.com</span>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="social">
+            <p>Follow us on</p>
+            <a href="https://instagram.com/ieee.iare?igshid=MTk0NTkyODZkYg=="><i class="fa-brands fa-instagram"></i> |
+                @ieee.iare</a>
+
+        </div>
+        <p>&copy; IEEE-IARE Contest Website</p>
+    </footer>
+    <script>
+        // Get references to the image elements
+        const portraitImg = document.getElementById('portraitImg');
+        const landscapeImg = document.getElementById('landscapeImg');
+
+        // Function to check device orientation and display appropriate image
+        function checkOrientation() {
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                portraitImg.src = 'Portrait.jpg'; // Replace 'portrait_image.jpg' with your actual portrait image path
+                portraitImg.classList.remove('hidden');
+                landscapeImg.classList.add('hidden');
+            } else {
+                landscapeImg.src = 'Landscape.jpg'; // Replace 'landscape_image.jpg' with your actual landscape image path
+                landscapeImg.classList.remove('hidden');
+                portraitImg.classList.add('hidden');
+            }
+        }
+
+        // Check the orientation on page load and resize
+        window.addEventListener('load', checkOrientation);
+        window.addEventListener('resize', checkOrientation);
+
+    </script>
+</body>
+
+</html>
